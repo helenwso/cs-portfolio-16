@@ -9,7 +9,7 @@
     font-size: 27px;
     border: 10px solid #ffe6ff;
     border-radius: 20px;
-    background-color: #4d1933;
+    background-color: #003366;
     
 }
 
@@ -21,23 +21,35 @@
 }
 
 body {
-    background-image: url(images/aesthetic/cherrywp.jpg);
+    background-image: url("http://www.cfau-pd.net/images/computer-wallpaper/computer-wallpaper-3.jpg");
     /* Set a specified height, or the minimum height for the background image */
-    min-height: 1400px;
+    min-height: 1450px;
     /* Set background image to fixed (don't scroll along with the page) */
     background-attachment: fixed;
     /* Center the background image */
-    background-position: center;
-    /* Set the background image to no repeat */
-    background-repeat: no-repeat;
+    background-position: top;
     /* Scale the background image to be as large as possible */
     background-size: cover;
     
 } 
 
 body {
-    color: #000000;
+    color: white;
     font-family: "Open Sans", cursive;
     text-decoration: none;
     font-size: larger
+}
+
+.motherboard {
+   vertical-align: bottom;
+   border:white 10px solid;
+   background-color:black;
+
+}
+
+p{
+    text-align:right;
+    margin-left: 700px
+    
+
 }
