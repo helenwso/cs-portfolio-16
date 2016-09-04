@@ -47,9 +47,10 @@ body {
 
 }
 
-p{
-    text-align:right;
-    margin-left: 700px
-    
+.alignleft {
+    float:left;
+}
 
+.alignright {
+    float: right;
 }
