@@ -42,15 +42,46 @@ body {
 
 .motherboard {
    vertical-align: bottom;
-   border:white 10px solid;
+   border:white 15px solid;
    background-color:black;
-
+   padding:40px 100px 60px 100px;
 }
 
-.alignleft {
-    float:left;
+.cpu {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 90px 100px;
 }
 
-.alignright {
-    float: right;
+.ram {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 120px 100px;
+}
+
+.communication {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 120px 100px;
+}
+
+.keyboard {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 80px 100px;
+}
+p{
+    /*text-align:right;*/
+    /*margin-left: 700px;*/
+    
+    width: 45%;
+    
 }
