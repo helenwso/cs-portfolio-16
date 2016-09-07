@@ -4,24 +4,27 @@
 }
 
 #navbar li {
-    display:inline-block;
+    display: inline-block;
     padding: 15px;
     font-size: 27px;
-    border: 10px solid #ffe6ff;
+    border: 10px solid #ffffff;
     border-radius: 20px;
-    background-color: #003366;
-    
+    background-color: #147816;
 }
 
 
 #navbar a {
-    color: #e6ffff;
+    color: #FAFFDB;
     font-family: "Satisfy", cursive;
     text-decoration: none;
 }
 
+
+
+
+
 body {
-    background-image: url("http://www.cfau-pd.net/images/computer-wallpaper/computer-wallpaper-3.jpg");
+    background-image: url("http://www.wallpapersxl.com/wallpapers/1440x900/technology/183804/technology-green-tech-wall-free-183804.jpg");
     /* Set a specified height, or the minimum height for the background image */
     min-height: 1450px;
     /* Set background image to fixed (don't scroll along with the page) */

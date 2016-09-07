@@ -36,6 +36,10 @@ body {
 } 
 
 body {
+   cursor: url(images/aesthetic/blue-umbrella.gif), auto;
+}
+
+body {
     color: #000000;
     font-family: "Open Sans", cursive;
     text-decoration: none;
