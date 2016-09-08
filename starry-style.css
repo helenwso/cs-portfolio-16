@@ -7,24 +7,21 @@
     display: inline-block;
     padding: 15px;
     font-size: 27px;
-    border: 10px solid #ffffff;
+    border: 10px solid #FFDA75;
     border-radius: 20px;
-    background-color: #147816;
 }
 
 
 #navbar a {
-    color: #FAFFDB;
+    color: white;
     font-family: "Satisfy", cursive;
     text-decoration: none;
 }
 
 
 
-
-
 body {
-    background-image: url("http://www.wallpapersxl.com/wallpapers/1440x900/technology/183804/technology-green-tech-wall-free-183804.jpg");
+    background-image: url("images/howto/starrybg.jpg");
     /* Set a specified height, or the minimum height for the background image */
     min-height: 1450px;
     /* Set background image to fixed (don't scroll along with the page) */
@@ -43,7 +40,7 @@ body {
     font-size: larger
 }
 
-.hardware {
+.howto {
    vertical-align: bottom;
    border:white 15px solid;
    background-color:black;
