@@ -38,6 +38,13 @@ body {
     font-size: larger
 }
 
+.instructions {
+    width: 960px;
+    margin:0 auto;
+}
+
+
+
 .motherboard {
    vertical-align: bottom;
    border:white 15px solid;
