@@ -39,20 +39,80 @@ body {
     font-size: larger
 }
 
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: auto;
+	height: auto;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+
 .hardware {
    vertical-align: bottom;
    border:white 15px solid;
    background-color:black;
    padding:40px 100px 60px 100px;
 }
-.motherboard {
+.motherboard-f {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   padding: 100px 100px 100px 100px;
+   margin: auto;
+}
+
+.motherboard-b {
    vertical-align: middle;
    border:white 15px solid;
    background-color:black;
    padding:40px 100px 60px 100px;
 }
 
-.cpu {
+.cpu-f {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   padding: 40px 400px 60px 400px;
+
+}
+
+.cpu-b {
    vertical-align: middle;
    border:white 15px solid;
    background-color:black;
@@ -60,29 +120,51 @@ body {
    padding: 40px 100px 90px 100px;
 }
 
-.ram {
+.ram-f {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 20px 400px 60px 400px;
+}
+.ram-b {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 60px 100px;
+}
+.communication-f {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 400px 80px 400px;
+}
+
+.communication-b {
    vertical-align: middle;
    border:white 15px solid;
    background-color:black;
    /*top right bottom left*/
    padding: 40px 100px 120px 100px;
 }
-
-.communication {
+.keyboard-f {
    vertical-align: middle;
    border:white 15px solid;
    background-color:black;
    /*top right bottom left*/
-   padding: 40px 100px 120px 100px;
+   padding: 40px 400px 60px 400px;
 }
 
-.keyboard {
+.keyboard-b {
    vertical-align: middle;
    border:white 15px solid;
    background-color:black;
    /*top right bottom left*/
    padding: 40px 100px 80px 100px;
 }
+
 p{
     /*text-align:right;*/
     /*margin-left: 700px;*/

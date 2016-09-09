@@ -7,7 +7,7 @@
     display: inline-block;
     padding: 15px;
     font-size: 27px;
-    border: 10px solid #FFDA75;
+    border: 10px solid #435F73;
     border-radius: 20px;
 }
 
@@ -18,10 +18,8 @@
     text-decoration: none;
 }
 
-
-
 body {
-    background-image: url("images/howto/starrybg.jpg");
+    background-image: url("http://www.hpcf.upr.edu/~abel/phl/star_field_full_gal.jpg");
     /* Set a specified height, or the minimum height for the background image */
     min-height: 1450px;
     /* Set background image to fixed (don't scroll along with the page) */
@@ -40,12 +38,6 @@ body {
     font-size: larger
 }
 
-.howto {
-   vertical-align: bottom;
-   border:white 15px solid;
-   background-color:black;
-   padding:40px 100px 60px 100px;
-}
 .motherboard {
    vertical-align: bottom;
    border:white 15px solid;
