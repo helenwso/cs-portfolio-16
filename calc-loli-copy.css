@@ -1,0 +1,77 @@
+
+#navbar {
+    text-align: center;
+}
+
+#navbar li {
+    display:inline-block;
+    padding: 10px;
+    font-size: 27px;
+    border: 10px solid #ffe6ff;
+    border-radius: 20px;
+    background-color: #4d1933;
+    
+}
+
+
+#navbar a {
+    color: #e6ffff;
+    font-family: "Satisfy", cursive;
+    text-decoration: none;
+}
+
+body {
+    background-image: url(images/aesthetic/cherrywp.jpg);
+    /* Set a specified height, or the minimum height for the background image */
+    min-height: 1400px;
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: fixed;
+    /* Center the background image */
+    background-position: center;
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+    
+} 
+
+/*body {*/
+/*   cursor: url(images/aesthetic/blue-umbrella.gif), auto;*/
+/*}*/
+
+
+
+body {
+    color: #000000;
+    font-family: "Open Sans", cursive;
+    text-decoration: none;
+    font-size: larger
+}
+
+#input1 {
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #c4daff;
+    padding: 15px;
+}
+#input2 {
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #c4daff;
+    padding: 15px;
+}
+
+#dropdown {
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #f5c4ff;
+    padding: 15px;
+}
+    
+#magic {
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #f5c4ff;
+    padding: 15px;
+}
+    
