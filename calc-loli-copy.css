@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-#navbar li {
+#navbar li {font-family: "satisfy", cursive;
     display:inline-block;
     padding: 10px;
     font-size: 27px;
