@@ -16,8 +16,24 @@ function getAnswer () {
         answer = parseInt (input1.value, 10) + parseInt(input2.value, 10);
         display.innerHTML = answer;
     }
+    else if (dropdown.value == "subtract") {
+        answer = parseInt(input1.value, 10) - parseInt(input2.value, 10);
+        display.innerHTML = answer;
+    }
     else if (dropdown.value == "multiply") {
         answer = parseInt(input1.value, 10) * parseInt(input2.value, 10);
+        display.innerHTML = answer;
+    }
+    else if (dropdown.value == "divide") {
+        answer = parseInt(input1.value, 10) / parseInt(input2.value, 10);
+        display.innerHTML = answer;
+    }
+    else if (dropdown.value == "square") {
+        answer = Math.pow(parseInt(input1.value, 10),parseInt(input2.value, 10));
+        display.innerHTML = answer;
+    }
+    else if (dropdown.value == "sqrt") {
+        answer = Math.sqrt(parseInt(input2.value, 10)) ;
         display.innerHTML = answer;
     }
 }

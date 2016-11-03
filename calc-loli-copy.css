@@ -68,11 +68,17 @@ body {
     padding: 15px;
 }
     
-#magic {
+#answerButton {
     font-family: "Satisfy", cursive;
     font-size: 50px;
     color:#4d1933;
     background-color: #f5c4ff;
     padding: 15px;
+}
+    
+#display {
+    font-family: "Satisfy", cursive;
+    font-size: 50px;
+    color:#4d1933;
 }
     
