@@ -6,11 +6,12 @@ var answerButton = document.getElementById("answerButton");
 var answer;
 var display = document.getElementById("display");
 
-/* Event listener for button
-   Does operation */
-
+/* Event listener for answerButton
+   Performs specified operation */
 answerButton.addEventListener("click", getAnswer);
 
+/*  Function to produce requested answer-
+    Takes user input values and combines with dropdown selection */
 function getAnswer () {
     if (dropdown.value == "add") {
         answer = parseInt (input1.value, 10) + parseInt(input2.value, 10);
