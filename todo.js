@@ -1,28 +1,26 @@
-// JavaScript File
-var todoInput = document.getElementById("todoinput");
+// user input box for to-do text //
+var todoInput = document.getElementById("todoInput");
+
+// dropdown for choosing CSS styling
 var dropdown = document.getElementById("dropdown");
-var todoSubmitButton = document.getElementById("todoSubmitButton");
-var todo;
-var todoLocation = document.getElementById("todoLocation");
-var display = document.getElementById("display");
 
+// button the user clicks to add to-do
+var addButton = document.getElementById("addButton");
 
+// div where the user's to-do is displayed
+var todoDisplayDiv = document.getElementById("todoDisplayDiv");
 
-/* Event listener for answerButton
-   Performs specified operation */
-todoSubmitButton.addEventListener("click", displayTodo)
-//the color changing stuff probably goes here???
-;
+// div where the user's completed tasks are displayed
+var completedDisplayDiv = document.getElementById("completedDisplayDiv");
 
-/*  Function to produce requested answer-
-    Takes user input values and combines with dropdown selection */
-function displayTodo () {
-    if (dropdown.value == "Important") {
-        todo = parseInt (todoInput.value, 10);
-        displayTodo.innerHTML = todo;
-    }
-    else if (dropdown.value == "Important") {
-        todo = parseInt (todoInput.value, 10);
-        displayTodo.innerHTML = todo;
-    }
-}
+var display;
+
+/* Event listener for addButton
+   Adds items to list */
+addButton.addEventListener("click", function evt (){
+    todoDisplayDiv.innerHTML = todoInput.value;
+//    if (todoInput) has text, then put it into tododisplaydiv within p tag
+//else: do nothing
+    //if (dropdown.value =
+    // "black"){display.innerHTML = display
+})

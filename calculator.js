@@ -14,7 +14,7 @@ answerButton.addEventListener("click", getAnswer);
     Takes user input values and combines with dropdown selection */
 function getAnswer () {
     if (dropdown.value == "add") {
-        answer = parseInt (input1.value, 10) + parseInt(input2.value, 10);
+        answer = parseInt(input1.value, 10) + parseInt(input2.value, 10);
         display.innerHTML = answer;
     }
     else if (dropdown.value == "subtract") {

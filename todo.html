@@ -28,32 +28,34 @@
    </ul>
          <!-- Navbar Ends Here -->
 
-<div class = "infomargin">
+<div class = "leftcolumn">
+
     Make your own to-do list!
     <br>
-    <input id= "todoInput" style="width:200px;" type="text" placeholder="Write your to-do here" required>
+    <input id = "todoInput" style="width:200px;" type="text" placeholder="Write your to-do here" required>
 
-    <select id="dropdown" style="width:130px;" placeholder= "Status">
-        <option value="none"> Choose Status </option>
-        <option value="bold"> Important </option>
-        <option value="strikethrough"> Complete </option>
+    <select id ="dropdown" style="width:230px;" placeholder= "Color">
+        <option value="black"> Black- or choose another color </option>  
         <option value="red"> Red </option>
         <option value="orange"> Orange </option>
-        <option value="orange"> Green </option>  
+        <option value="green"> Green </option>  
+        <option value="blue"> Blue </option>
+
     </select>
   
-  <button type="todoSubmitButton"> Submit To-Do</button>
+<button type="addButton"> Add To-Do</button>
 
-  
 <br>
-<br><br>
-<div id= "todoLocation"> </div>
+<div id = "todoDisplayDiv"></div> <br><br>
     <img src="images/aesthetic/blue-umbrella.gif" alt="Blue Umbrella">
 </div>
 
+<div class = "rightcolumn">
+    <div id = "completedDisplayDiv">
+    </div>
+</div>
 
-    <script src="todo.js">
-    </script>
+<script src="todo.js"> </script>
 
     </body>
 </html>
