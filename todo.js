@@ -10,51 +10,38 @@ var addButton = document.getElementById("addButton");
 // button the user clicks to add to-do
 
 addButton.addEventListener("click", function (){
+    
 
-    var addBlackTask = "<div style ='color:black'>" + todoInput.value + "</div>";
+    var addBlackTask = "<p style ='color:black'>" + todoInput.value + "</p>";
     
     if (dropdown.value == "black") {
        todoDisplayDiv.innerHTML = todoDisplayDiv.innerHTML + addBlackTask; 
     }
 
-    var addRedTask = "<div style ='color:red'>" + todoInput.value + "</div>";
+    var addRedTask = "<p style ='color:red'>" + todoInput.value + "</p>";
     
     if (dropdown.value == "red") {
        todoDisplayDiv.innerHTML = todoDisplayDiv.innerHTML + addRedTask; 
     }
     
-    var addOrangeTask = "<div style ='color:orange'>" + todoInput.value + "</div>";
+    var addOrangeTask = "<p style ='color:orange'>" + todoInput.value + "</p>";
     
     if (dropdown.value == "orange") {
        todoDisplayDiv.innerHTML = todoDisplayDiv.innerHTML + addOrangeTask; 
     }    
     
-    var addGreenTask = "<div style ='color:green'>" + todoInput.value + "</div>";
+    var addGreenTask = "<p style ='color:green'>" + todoInput.value + "</p>";
     
     if (dropdown.value == "green") {
        todoDisplayDiv.innerHTML = todoDisplayDiv.innerHTML + addGreenTask; 
     }    
     
-    var addBlueTask = "<div style ='color:blue'>" + todoInput.value + "</div>";
+    var addBlueTask = "<p style ='color:blue'>" + todoInput.value + "</p>";
     
     if (dropdown.value == "blue") {
        todoDisplayDiv.innerHTML = todoDisplayDiv.innerHTML + addBlueTask; 
     }            
- 
-    var addBoldTask = "<div style ='font-weight:bold'>" + todoInput.value + "</div>";
-    
-    if (dropdown.value == "bold") {
-       todoDisplayDiv.innerHTML = todoDisplayDiv.innerHTML + addBoldTask; 
-    }            
-        
 });
-
-
-
-todoDisplayDiv.addEventListener("click", function (evt){
-        var minusTask = evt. target;
-        minusTask.parentNode.removeChild (minusTask);
-    });
 
 
 // div where the user's completed tasks are displayed

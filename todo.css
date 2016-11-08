@@ -13,7 +13,6 @@
     
 }
 
-
 #navbar a {
     color: #e6ffff;
     font-family: "Satisfy", cursive;
@@ -40,7 +39,6 @@ body {
 /*}*/
 
 
-
 body {
     color: #000000;
     font-family: "Open Sans", cursive;
@@ -56,3 +54,5 @@ body {
     width: 70%;
     margin: 0% 20% 5% 10%;
 }
+
+/* When clicked on, add a background color and strike out text */
