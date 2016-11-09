@@ -38,7 +38,6 @@ body {
 /*   cursor: url(images/aesthetic/blue-umbrella.gif), auto;*/
 /*}*/
 
-
 body {
     color: #000000;
     font-family: "Open Sans", cursive;
@@ -50,9 +49,8 @@ body {
     width: 70%;
     margin: 0% 20% 5% 10%;
 }
-#completeLocation {
-    width: 70%;
-    margin: 0% 20% 5% 10%;
+.strikeThrough {
+    text-decoration: line-through;
 }
 
 /* When clicked on, add a background color and strike out text */
