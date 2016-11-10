@@ -56,7 +56,8 @@ todoDisplayDiv.addEventListener("click", function (evt){
      else{
          strikeTask.style.textDecoration = "line-through";
      }
-});   
+});
+
 // todoDisplayDiv.addEventListener("click", function (evt){
 //         var minusTask = evt. target;
 //         minusTask.parentNode.removeChild (minusTask);
