@@ -36,11 +36,21 @@
 <div class= "instructions">
     Hello! Below you'll find a step-by-step illustration of the process
     I went through to make my  <a href="https://helenwso.github.io/cs-portfolio-16/hthardware.html">Calculator Page. </a>
-    If you'd like to see the initial setup of the page, please refer to the setup section of the <a href="https://helenwso.github.io/cs-portfolio-16/hthardware.html">Hardware Page.
-</a>
-    Otherwise, we'll be moving straight into the content of the page &#9786;
-    
-<br><br><br><br><br><br>
+
+<img src = "images/howto/setup.png">
+<br>
+
+First, start off by creating an html file based off a template. <br><br><br>
+File > New From Template > HTML file <br>
+<img src = "images/howto/makehtml.png">
+<br><br><br>
+
+Press ctrl+s, as it will give your file a name. I titled this page "calculator.html".
+You could technically have a folder for it, but I like to keep my images and site files separate.
+Click save. <br>
+
+The page is now created! <br><br><br>
+
 <img src = "images/howto/HTML.png"><br>
 The HTML for the calculator page was fairly simple.
 After the initial setup, I added directions for the calculator.
@@ -75,8 +85,133 @@ I named the script "calculator.js".
 <br>
 While HTML, the bare-bones of coding, is static, JavaScript is the coding language that runs functions so that the website is user-interactive.
 For this webpage specifically, JS was used to do operations that the user would choose from the dropdown made in the HTML previously.
+<br><br>
+
+First, I started by typing out the variables that I would use.
+The initial variables included the two input boxes, dropdown, answer button from the HTML.
+They also include an answer to the operations performed, and a place to display the answers.<br>
+<img src = "images/howto/variables.png"><br><br>
+
+Next, I added an event listener so that when the user clicked the answer button,<br>the answer would be calculated.<br>
+<img src = "images/howto/eventlisten.png">
+<br><br>
+
+Next, we need functions for the calculator to calculate. I named my function "getAnswer", and had an if else for each dropdown value's associated operation.
+Parsing the integer refers to taking the user's string input and turning it into a number so that calculations can be performed. The 10 in the code, called a radix, refers to the decimal system.
+I technically didn't have to put the 10 there, because without the  it's automatically assumed, but the code was advising me to specify the radix just in case.
+<br><br>
+<img src = "images/howto/function.png">
 <br>
-First, I started by typing out the variables that I would use in the 
+You will see that the format for squaring and rooting were different than the formats for the first four functions. This is because
+they are both Math objects in JS, and we need Math.(insert operation abbreviation here) because normal keyboard symbols won't work within the code.
+<br><br>
+Lastly, display.innerHTML allows the calculated answer to be displayed on screen in form of the variable "answer", inside the div with the ID "display".
+<br><br>
+
+Not quite done yet though.. this page looks quite plain. <br><br><br>
+
+<img src = "images/howto/CSS--Final-Touches.png"> <br>
+To edit the visuals of the page, I created a CSS file and linked it to the top of the head.
+I linked Google fonts, a favicon, and a cursor into into the head as well. <br><br>
+
+<img src = "images/howto/csshead.png"> <br><br>
+
+In the CSS portion, I edited the assorted sizes, fonts, colors, and paddings of page content. <br>
+
+<xmp>
+    #navbar {
+    text-align: center;
+}
+
+#navbar li {font-family: "satisfy", cursive;
+    display:inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border: 10px solid #ffe6ff;
+    border-radius: 20px;
+    background-color: #4d1933;
+    
+}
+
+
+#navbar a {
+    color: #e6ffff;
+    font-family: "Satisfy", cursive;
+    text-decoration: none;
+}
+
+body {
+    background-image: url(images/aesthetic/cherrywp.jpg);
+    /* Set a specified height, or the minimum height for the background image */
+    min-height: 500px;
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: fixed;
+    /* Center the background image */
+    background-position: center;
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+    
+}
+
+body {
+    color: #000000;
+    font-family: "Open Sans", cursive;
+    text-decoration: none;
+    font-size: larger
+}
+
+#input1 {
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #c4daff;
+    padding: 15px;
+}
+#input2 {
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #c4daff;
+    padding: 15px;
+}
+
+#dropdown {
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #f5c4ff;
+    padding: 15px;
+}
+    
+#answerButton {
+    font-family: "Satisfy", cursive;
+    font-size: 50px;
+    color:#4d1933;
+    background-color: #f5c4ff;
+    padding: 15px;
+}
+    
+#display {
+    font-family: "Satisfy", cursive;
+    font-size: 50px;
+    color:#4d1933;
+}
+    
+</xmp>
+I copied and pasted my navbar from my other pages, and made sure to link the calculator html page into the other pages' navbars as well. <br><br>
+<img src = "images/howto/navbar.png"> <br><br>
+
+To finish off the page, I centered everything and linked a nice pixel icon into the page after the display div as well, so that people could see where their task list ended. <br><br>
+<img src = "images/howto/umbrella.png"> <br><br>
+
+And that's it! Enjoy the finished calculator &#9786; <br><br>
+
+
+<img src = "images/howto/calcdemo1.png" style="width:804px;">
+<img src = "images/howto/calcdemo2.png" style="width:400px;">
+<img src = "images/howto/calcdemo3.png" style="width:400px;">
+<img src = "images/howto/calcdemo5.png" style="width:400px;">
+<img src = "images/howto/calcdemo4.png" style="width:400px;">
+
 </div>
 <br><br><br><br><br><br>
     </body>
