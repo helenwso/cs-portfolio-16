@@ -1,0 +1,55 @@
+
+#navbar {
+    text-align: center;
+}
+
+#navbar li {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border: 10px solid #ffffff;
+    border-radius: 20px;
+    background-color: #147816;
+}
+
+
+#navbar a {
+    color: #FAFFDB;
+    font-family: "Satisfy", cursive;
+    text-decoration: none;
+}
+
+body {
+    padding: 50px 100px 200px 100px;
+    background-color: #000000;
+    /* Set a specified height, or the minimum height for the background image */
+    min-height: 1450px;
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: fixed;
+    /* Center the background image */
+    background-position: top;
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+    
+} 
+
+body {
+    color: white;
+    font-family: "Open Sans", cursive;
+    text-decoration: none;
+    font-size: larger;
+}
+
+p{
+    /*text-align:right;*/
+    /*margin-left: 700px;*/
+    
+    width: 45%;
+    
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: x-large;
+    font-family: "Satisfy", cursive;
+}
