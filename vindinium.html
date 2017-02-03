@@ -26,12 +26,22 @@
          <!-- Navbar Ends Here -->
     <br>
 
-Vindinium is a dungeon-style role-playing game.
-The primary objective is to collect gold.
-The person who collects the most gold by the end of the game wins.
+Vindinium is a dungeon-style role-playing game. <br><br>
+
+<img src="http://stratosprovatopoulos.com/wp-content/uploads/2014/02/screenshot.png"/ alt="vindinium example" width="50%";>
+
+<br><br>
+The primary objective is to collect gold, represented by the yellow coins on the right.
+The person who collects the most gold by the end of the game wins. <br><br>
+
+<img src="https://i.imgur.com/8NlAaFv.png"/ alt="vind winner" width="50%";> <br><br>
+
+
 Each bot has a life points cap of 100. Moving and fighting reduces life.
 <br><br>
-Life can be restored at the tavern, where players use their gold to buy restorative cream sodas.
+<img src="http://stratosprovatopoulos.com/wp-content/uploads/2014/02/screenshot.png"/ alt="vindinium example" width="50%";>
+<br><br>
+Life can be restored at the taverns (corners), where players use their gold to buy restorative cream sodas.
 Gold can be collected by fighting goblins at mines, taking ownership of the mines in the process.
 Mines give you gold each turn. When two bots meet at the same location, a battle ensues. The first person to reach 0 health is the loser.
 All of their mines are lost to the winner; however, they retain all their gold while respawning at their starting position.
@@ -39,18 +49,20 @@ Trees are obstacles in the game, and can cause bots to get stuck if their code d
 <br><br>
 Players, mines, taverns, and obstacles are present in each game.
 Maps are always symmetrical, but object locations, spawn positions, map sizes, and the number of mines available can vary immensely.
+<br><br>
+<img src="http://www.cs.huji.ac.il/~ai/projects/2015/Vindinium/img/Embarassing-Arena-1.png"/ alt="small map" width="50%";>
+<br>
 One game may have a tiny map with only 4 mines available. This leads to bots constantly under the threat of attack,
 quick losses of life, and constant mine turnover. The small number of mines in combination with small maps lead to games
 that are often very close- there may only be a small difference in gold count between the first and fourth place bot.
 <br><br>
+<img src="http://www.cs.huji.ac.il/~ai/projects/2015/Vindinium/img/Amazing-Arena-1.png"/ alt="large map" width="50%";> <br>
 Another game may have two dozen mines and a large map. This often means that taverns are more spread out.
 If one bot takes all the mines, another bot can attack that bot and gain all of their mines. Whoever gets the most gold in the end often is the person who has held the mines the longest, and most successfully avoided loss of life.
 <br><br>
 Many strategies can take place in this game. One bot may do better in a small map than a large map. The "hunger games" bot can be programmed to only kill other bots and survive.
-Or if you prefer a "absolute jerk" bot, you could program one that takes the majority of the mines and just goes random near a tavern.
+Or if you prefer a "absolute jerk" bot, you could program one that takes the majority of the mines and just stays near a tavern to ensure undefeatable immortality.
 In my project, I decided to program a bot that accounted for many possible situations.
-If I learned more coding skills, I could potentially program a bot that can avoid players
-(by going in the opposite direction of close players if health is at risk).
 <br><br><br><br>
 I will now be detailing each part of my code!<br>
 
@@ -146,7 +158,7 @@ Bot.prototype.botBrain = function() {
             task = "claimClosestEnemyMine"; 
         }
         // If I have all mines and my life points are equal to or more than 70, go in a random direction.
-        else if ((bot.yourBot.life >= 70) && (bot.yourBot.mineCount == (enemyMines.length) + (bot.freeMines.length))){
+        else if ((bot.yourBot.life >= 70) && ((enemyMines.length) + (bot.freeMines.length) == 0)){
             console.log("Going Random!");
             var rand = Math.floor(Math.random() * 4);
             var dirs = ["north", "south", "east", "west"];
@@ -249,7 +261,7 @@ Third is the task itself and how it works. Most of my tasks are explained in the
             task = "claimClosestEnemyMine"; 
         }
         // If I have all mines and my life points are equal to or more than 70, go in a random direction.
-        else if ((bot.yourBot.life >= 70) && (bot.yourBot.mineCount == (enemyMines.length) + (bot.freeMines.length))){
+        else if ((bot.yourBot.life >= 70) && ((enemyMines.length) + (bot.freeMines.length) == 0)){
             console.log("Going Random!");
             var rand = Math.floor(Math.random() * 4);
             var dirs = ["north", "south", "east", "west"];
@@ -293,7 +305,21 @@ Therefore, going to the tavern when health is less than 70 increases my chance o
 
 Now, I will be explaining how each of the tasks works! <br><br>
 
-<div class ="sectionTitle"> If life is less than or equal to 45, go to the nearest tavern. </div><br><br>
+<div class ="sectionTitle"> If life is less than or equal to 45, go to the nearest tavern. </div><br>
+<!-- border -->
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="4%";>
+<img src="https://fanon.clubpenguinwiki.info/static/images/fanon/thumb/b/b9/Cream_Soda_logo.PNG/250px-Cream_Soda_logo.PNG"/ alt="cream soda" width="5%";>
+
+<br><br>
 <div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
     <code>
@@ -322,15 +348,26 @@ have to claim all my mines back.<br>
    <br>
    </code>
 </pre></div><br><br>
-This code checks if the task is "tavern". Since going to the nearest tavern would use up the least health,
+This code runs if the task is "tavern". Since going to the nearest tavern would use up the least health,
 it defines the variable for the closest tavern. First, it sets the closest tavern as the first tavern in the array.
 It then checks the next tavern in the array, and compares the two. If my distance from the supposed closest tavern (the first tavern in the array)
 is farther from the distance from the next tavern in the array, it sets the closer tavern as the closest tavern.
 By the time it runs through the entire array, it has found the final closest tavern.
 Then, it sets the bot in the direction of the closest Tavern, while console logging "Going to Tavern!"
 
-<br><br><div class ="sectionTitle"> If there is a free mine, claim the nearest one. </div><br><br>
+<br><br><div class ="sectionTitle"> If there is a free mine, claim the nearest one. </div>
 
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";>
+<br><br>
 <div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
     <code>
@@ -357,7 +394,7 @@ If my health is above 45, I should check for the free mines available.<br><br>
    <br>
    </code>
 </pre></div><br><br>
-This code checks if the task is "claimClosestFreeMine". It is almost identical to that of the code for the closest tavern, just with different
+This code runs if the task is "claimClosestFreeMine". It is almost identical to that of the code for the closest tavern, just with different
 variables.
 
 Since going to the nearest mine would use up the least health,
@@ -367,7 +404,19 @@ is farther from the distance from the next mine in the array, it sets the closer
 By the time it runs through the entire array, it has found the final closest mine.
 Then, it sets the bot in the direction of the closest free mine, while console logging "Claiming Closest Free Mine!"
 
-<br><br><div class ="sectionTitle"> If the bot with most mines has two or more mines, attack the bot with the most mines. </div><br><br>
+<br><br><div class ="sectionTitle"> If the bot with most mines has two or more mines, attack the bot with the most mines. </div>
+
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";>
+<br><br>
 
 <div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
@@ -406,7 +455,7 @@ I can avoid unnecessary conflict (attacking someone with 1 mine in the beginning
    </code>
 </pre></div><br><br>
 
-This code checks if the task is "attackMostMinesBot".
+This code runs if the task is "attackMostMinesBot".
 
 it defines the variable for the bot with most mines. First, it sets the mostMinesBot as the first bot in the array of enemyBots.
 It then checks the mine count of the next bot in the array. If it has more mines than the supposed bot with most mines
@@ -416,7 +465,19 @@ Then, it sets the bot in the direction of the mostMinesBot, while console loggin
 
 <br><br>
 
-<br><br><div class ="sectionTitle"> If there's an enemy mine, claim the closest one. </div><br><br>
+<br><br><div class ="sectionTitle"> If there's an enemy mine, claim the closest one. </div>
+
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="http://images.clipshrine.com/download/wheel/large-RPG-map-symbols-Mine-33.3-93555.png"/ alt="health potion" width="5%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";>
+<br><br>
 
 <div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
@@ -427,7 +488,7 @@ Then, it sets the bot in the direction of the mostMinesBot, while console loggin
    <br>
    </code>
 </pre></div><br><br>
-<br><br> If enemies don't have at least two bots, I might as well just collect the one mine they have rather than
+<br><br> If enemies don't have at least two mines, I might as well just collect the one mine they have rather than
 going to the trouble and risk of fighting them. <br><br>
 
 <div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
@@ -453,7 +514,7 @@ going to the trouble and risk of fighting them. <br><br>
    </code>
 </pre></div><br><br>
 
-This code checks if the task is "claimClosestEnemyMine".
+This code runs if the task is "claimClosestEnemyMine".
 
 It defines the variable for the closest enemy mine. First, it sets the closestEnemyMine as the first mine in the array of enemy mines.
 
@@ -461,6 +522,75 @@ It then checks the distance between the mine in the array and myPos, my position
 the next mine. 
 By the time it runs through the entire array, it has found the final closestEnemyMine.
 Then, it sets the bot in the direction of the closestEnemyMine, while console logging "Claiming Closest Enemy Mine!"
+
+<br><br><div class ="sectionTitle"> If I have all mines and my life points are equal to or more than 70, go in a random direction. </div>
+
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";><img src="https://rpgmaker.net/media/content/games/4468/screenshots/hp_potion.png"/ alt="health potion" width="3%";>
+<img src="https://openclipart.org/image/2400px/svg_to_png/11479/nicubunu-RPG-map-symbols-Mine.png"/ alt="mine" width="5%";>
+<br><br> If I have enough life to safely go in a random direction, I can avoid using up unnecessary gold on staying at a tavern when I don't need it.  <br><br>
+
+<div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        else if ((bot.yourBot.life >= 70) && ((enemyMines.length) + (bot.freeMines.length) == 0)){
+            console.log("Going Random!");
+            var rand = Math.floor(Math.random() * 4);
+            var dirs = ["north", "south", "east", "west"];
+            bot.goDir = dirs[rand];
+        }
+   </code>
+</pre></div><br><br>
+
+
+This code does not run a named task. Instead, it checks for life and if I have all mines (there are neither enemy mines nor free mines).
+It then picks a random direction and goes to that direction, while console logging "Going Random!"
+
+
+<br><br><div class ="sectionTitle"> If none of the above conditions apply, go to the nearest tavern. </div>
+<br><br> Both process and functionality have already been explained, but basically if my health is below a certain relatively high point and I have all the mines, I go to the tavern anyway so that I can protect my mines. Then, once
+my health is above this point, the code will run the going random function, so that I am able to gain gold faster. <br><br>
+
+<div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        else {
+            task = "tavern";
+        }
+   </code>
+</pre></div><br><br>
+
+Recap! <br><br>
+My bot can gain health, claim mines, and attack. Though this version works well, previous versions could often be unpredictable.
+Sometimes the bot coding and maps coincided so that my bot was stuck in perpetual murder, and I just kept respawning in the same location.
+I would say that AI is as simple or complicated as you make it. I could've stuck with a healing function and a random function, or even just a killing function.
+Instead, I gave it a bunch of conditions to try for the best performance. If I had more coding skills, I probably could've analyzed data
+so that the bot was truly intelligent and could decide the best action to take based on results of previous scenarios. Beforehand, I did not have much of an
+opinion on AI at all, as I did not know much about it. However, now I have a better idea of the programming that comes with it.
+<br><br>Many people have a strong opinion on AI, and partake in the controversial conversations surrounding AI about taking jobs, destroying humanity, and so on.
+I have seen bots on the news that did things much more advanced than my Vindinium bot does. However, I do feel like in order to have a strong opinion
+on the subject, I would need to know more about programming and research the ideas of both sides, so I hope to learn more about those things in the future.
+<br><br>
+Overall, Vindinium was a really enlightening experience for me. JS had previously intimidated me, but after doing a project I strived to constantly improve,
+I gained a much better understanding of coding.
+<br><br>
+
+Thank you for reading!
+
+<br><br>
+
+(XD)<br>
+<img src="images/helen_lmao.png" alt="lmao" width="75%";>
+
 
 <br><br>
 
