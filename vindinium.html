@@ -52,7 +52,7 @@ In my project, I decided to program a bot that accounted for many possible situa
 If I learned more coding skills, I could potentially program a bot that can avoid players
 (by going in the opposite direction of close players if health is at risk).
 <br><br><br><br>
-I will now be detailing each part of my code!
+I will now be detailing each part of my code!<br>
 
 <div style="padding: 10px; height:500px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
@@ -137,7 +137,7 @@ Bot.prototype.botBrain = function() {
         else if (bot.freeMines.length > 0){   
             task = "claimClosestFreeMine";
         }
-        // If the bot with most mines has two or more mines, attack them.
+        // If the bot with most mines has two or more mines, attack the bot with the most mines.
         else if (mostMinesBot.mineCount >= 2){   
             task = "attackMostMinesBot"; 
         }
@@ -240,7 +240,7 @@ Third is the task itself and how it works. Most of my tasks are explained in the
         else if (bot.freeMines.length > 0){   
             task = "claimClosestFreeMine";
         }
-        // If the bot with most mines has two or more mines, attack them.
+        // If the bot with most mines has two or more mines, attack the bot that has the most mines.
         else if (mostMinesBot.mineCount >= 2){   
             task = "attackMostMinesBot"; 
         }
@@ -293,7 +293,7 @@ Therefore, going to the tavern when health is less than 70 increases my chance o
 
 Now, I will be explaining how each of the tasks works! <br><br>
 
-<div class ="sectionTitle"> If life is less than or equal to 45, go to the tavern. </div><br><br>
+<div class ="sectionTitle"> If life is less than or equal to 45, go to the nearest tavern. </div><br><br>
 <div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
     <code>
@@ -304,12 +304,11 @@ Now, I will be explaining how each of the tasks works! <br><br>
    </code>
 </pre></div><br><br>
 The tavern is always first priority. If I die, I will waste valuable time in trying to get to my destination, and on top of that,
-have to claim all my mines back.
+have to claim all my mines back.<br>
 
-<div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<div style="padding: 10px; height:300px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
     <code>
-        // Finds the nearest tavern and sets myDir towards that direction.
         if(task === "tavern") {
             var closestTavern = bot.taverns[0];
             for(i = 0; i < bot.taverns.length; i++) {
@@ -323,18 +322,147 @@ have to claim all my mines back.
    <br>
    </code>
 </pre></div><br><br>
-This code checks if the task is "tavern". Since going to the nearest tavern would use up the least heatlh,
+This code checks if the task is "tavern". Since going to the nearest tavern would use up the least health,
 it defines the variable for the closest tavern. First, it sets the closest tavern as the first tavern in the array.
 It then checks the next tavern in the array, and compares the two. If my distance from the supposed closest tavern (the first tavern in the array)
 is farther from the distance from the next tavern in the array, it sets the closer tavern as the closest tavern.
-By the time it runs through the entire array, it would've found the final closest tavern.
+By the time it runs through the entire array, it has found the final closest tavern.
 Then, it sets the bot in the direction of the closest Tavern, while console logging "Going to Tavern!"
 
-<div class ="sectionTitle"> If there is a free mine, claim it. </div>
+<br><br><div class ="sectionTitle"> If there is a free mine, claim the nearest one. </div><br><br>
 
+<div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        else if (bot.freeMines.length > 0){   
+            task = "claimClosestFreeMine";
+        }
+   <br>
+   </code>
+</pre></div><br><br>
+If my health is above 45, I should check for the free mines available.<br><br>
+<div style="padding: 10px; height:300px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        if(task === "claimClosestFreeMine") {
+            var closestFreeMine = bot.freeMines[0];
+            for(i = 0; i < bot.freeMines.length; i++) {
+                if(bot.findDistance(myPos, closestFreeMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                    closestFreeMine = bot.freeMines[i];
+                }
+            }
+            console.log("Claiming Closest Free Mine!");
+            myDir = bot.findPath(myPos, closestFreeMine);
+        }
+   <br>
+   </code>
+</pre></div><br><br>
+This code checks if the task is "claimClosestFreeMine". It is almost identical to that of the code for the closest tavern, just with different
+variables.
 
+Since going to the nearest mine would use up the least health,
+it defines the variable for the closest mine. First, it sets the closest mine as the first mine in the array.
+It then checks the next mine in the array, and compares the two. If my distance from the supposed closest mine (the first mine in the array)
+is farther from the distance from the next mine in the array, it sets the closer mine as the closest mine.
+By the time it runs through the entire array, it has found the final closest mine.
+Then, it sets the bot in the direction of the closest free mine, while console logging "Claiming Closest Free Mine!"
 
+<br><br><div class ="sectionTitle"> If the bot with most mines has two or more mines, attack the bot with the most mines. </div><br><br>
 
+<div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        else if (mostMinesBot.mineCount >= 2){   
+            task = "attackMostMinesBot"; 
+        }
+   <br>
+   </code>
+</pre></div><br><br>
+<br><br> If the bot has more than 2 mines out of 4, it's definitely worth attacking because they can easily gain gold. However,
+if 2 is only a small portion of the mines available, attacking the person with the most mines would be more accurate. With this code,
+I can avoid unnecessary conflict (attacking someone with 1 mine in the beginning of the game). <br><br>
+
+<div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        if(task === "attackMostMinesBot") {
+            console.log("Attacking Most Mines Bot!");
+            myDir = bot.findPath(myPos, mostMinesBot.posArray);
+        }
+   <br>
+   </code>
+</pre></div><br><br>
+
+<div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        var mostMinesBot = enemyBots[0];
+            for(i = 0; i < enemyBots.length; i++) {
+                if ((mostMinesBot.mineCount) < (enemyBots[i].mineCount)) {
+                    mostMinesBot = enemyBots[i];
+                }
+            }
+   <br>
+   </code>
+</pre></div><br><br>
+
+This code checks if the task is "attackMostMinesBot".
+
+it defines the variable for the bot with most mines. First, it sets the mostMinesBot as the first bot in the array of enemyBots.
+It then checks the mine count of the next bot in the array. If it has more mines than the supposed bot with most mines
+(the first mine in the array), it sets the closer mine as the closest mine.
+By the time it runs through the entire array, it has found the final mostMinesBot.
+Then, it sets the bot in the direction of the mostMinesBot, while console logging "Attacking Most Mines Bot!"
+
+<br><br>
+
+<br><br><div class ="sectionTitle"> If there's an enemy mine, claim the closest one. </div><br><br>
+
+<div style="padding: 10px; height:100px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        else if (enemyMines.length > 0){   
+            task = "claimClosestEnemyMine"; 
+        }
+   <br>
+   </code>
+</pre></div><br><br>
+<br><br> If enemies don't have at least two bots, I might as well just collect the one mine they have rather than
+going to the trouble and risk of fighting them. <br><br>
+
+<div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        var closestEnemyMine = enemyMines[0];
+            for(i = 0; i < enemyMines.length; i++) {
+                if(bot.findDistance(myPos, closestEnemyMine) > bot.findDistance(myPos, enemyMines[i])) {
+                    closestEnemyMine= enemyMines[i];
+                }
+            }   <br>
+   </code>
+</pre></div><br><br>
+
+<div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
+<pre>
+    <code>
+        if (task === "claimClosestEnemyMine"){
+            console.log("Claiming Closest Enemy Mine!");
+            myDir = bot.findPath(myPos, closestEnemyMine);
+        }        
+   <br>
+   </code>
+</pre></div><br><br>
+
+This code checks if the task is "claimClosestEnemyMine".
+
+It defines the variable for the closest enemy mine. First, it sets the closestEnemyMine as the first mine in the array of enemy mines.
+
+It then checks the distance between the mine in the array and myPos, my position, and compares this distance when it does the same thing with
+the next mine. 
+By the time it runs through the entire array, it has found the final closestEnemyMine.
+Then, it sets the bot in the direction of the closestEnemyMine, while console logging "Claiming Closest Enemy Mine!"
+
+<br><br>
 
 
     </body>
