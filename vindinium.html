@@ -276,32 +276,6 @@ Third is the task itself and how it works. Most of my tasks are explained in the
 </pre>
 </div>
 <br>
-However, one thing does need some clarification- the else statement. 
-If the following apply, the task will run.
-<br>
-<ol>
-    <li> Health is more than 45 </li>
-    <li> There are no free or enemy mines </li>
-    <li> No one has two or more mines </li>
-    <li> I don't have all mines in addition to a life above 70 </li>
-</ol>
-<br>
-What exactly is the situation in which "else" applies?
-<br>
-Well,
-<ol>
-    <li> If there are no free or enemy mines, that means I own all the mines.</li>
-    <li> If I own all the mines and have life of 70+, I will be going random.</li>
-    <li> If I own all the mines and have a life of 45-, I will be going to the tavern.</li>
-</ol>
-<br>
-This means that this "else" will only apply when I have all mines, a life that is 45 and higher, and 69 and lower.<br><br>
-This is important because if I have all the mines, I will need special protection, since many bots attack the bot with the most mines.
-The only place where I am safe from death is the tavern, which consumes gold.
-To preserve gold, I go in a random direction when my health is above 70.
-However, as I am constantly in danger of being attacked, below that point starts to get risky.<br><br>
-Therefore, going to the tavern when health is less than 70 increases my chance of living and keeping my weatlh of mines.<br>
-<br>
 
 Now, I will be explaining how each of the tasks works! <br><br>
 
@@ -557,9 +531,7 @@ It then picks a random direction and goes to that direction, while console loggi
 
 
 <br><br><div class ="sectionTitle"> If none of the above conditions apply, go to the nearest tavern. </div>
-<br><br> Both process and functionality have already been explained, but basically if my health is below a certain relatively high point and I have all the mines, I go to the tavern anyway so that I can protect my mines. Then, once
-my health is above this point, the code will run the going random function, so that I am able to gain gold faster. <br><br>
-
+<br><br>
 <div style="padding: 10px; height:200px; width:1000px; border:1px solid #ccc; font:16px; overflow:auto;">
 <pre>
     <code>
@@ -568,6 +540,32 @@ my health is above this point, the code will run the going random function, so t
         }
    </code>
 </pre></div><br><br>
+<br>
+If the following apply, the task will run.
+<br>
+<ol>
+    <li> Health is more than 45 </li>
+    <li> There are no free or enemy mines </li>
+    <li> No one has two or more mines </li>
+    <li> I don't have all mines in addition to a life above 70 </li>
+</ol>
+<br>
+What exactly is the situation in which "else" applies?
+<br>
+Well,
+<ol>
+    <li> If there are no free or enemy mines, that means I own all the mines.</li>
+    <li> If I own all the mines and have life of 70+, I will be going random.</li>
+    <li> If I own all the mines and have a life of 45-, I will be going to the tavern.</li>
+</ol>
+<br>
+This means that this "else" will only apply when I have all mines, a life that is 45 and higher, and 69 and lower.<br><br>
+This is important because if I have all the mines, I will need special protection, since many bots attack the bot with the most mines.
+The only place where I am safe from death is the tavern, which consumes gold.
+To preserve gold, I go in a random direction when my health is above 70.
+However, as I am constantly in danger of being attacked, below that point starts to get risky.<br><br>
+Therefore, going to the tavern when health is less than 70 increases my chance of living and keeping my wealth of mines.<br>
+<br><br>
 
 Recap! <br><br>
 My bot can gain health, claim mines, and attack. Though this version works well, previous versions could often be unpredictable.
@@ -588,7 +586,7 @@ Thank you for reading!
 
 <br><br>
 
-(XD)<br>
+(mwahahahaha)<br>
 <img src="images/helen_lmao.png" alt="lmao" width="75%";>
 
 
