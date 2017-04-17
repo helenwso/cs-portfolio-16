@@ -1,0 +1,92 @@
+
+#navbar {
+    text-align: center;
+}
+
+#navbar li {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border: 10px solid #435F73;
+    border-radius: 20px;
+}
+
+
+#navbar a {
+    color: white;
+    font-family: "Satisfy", cursive;
+    text-decoration: none;
+}
+
+body {
+    background-image: url("https://cdn.shutterstock.com/shutterstock/videos/9455726/thumb/1.jpg");
+    /* Set a specified height, or the minimum height for the background image */
+    min-height: 1450px;
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: fixed;
+    /* Center the background image */
+    background-position: top;
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+    
+} 
+
+body {
+    color: white;
+    font-family: "Open Sans", cursive;
+    text-decoration: none;
+    font-size: larger
+}
+
+.instructions {
+    width: 960px;
+    margin:0 auto;
+}
+
+
+
+.motherboard {
+   vertical-align: bottom;
+   border:white 15px solid;
+   background-color:black;
+   padding:40px 100px 60px 100px;
+}
+
+.cpu {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 90px 100px;
+}
+
+.ram {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 120px 100px;
+}
+
+.communication {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 120px 100px;
+}
+
+.keyboard {
+   vertical-align: middle;
+   border:white 15px solid;
+   background-color:black;
+   /*top right bottom left*/
+   padding: 40px 100px 80px 100px;
+}
+p{
+    /*text-align:right;*/
+    /*margin-left: 700px;*/
+    
+    width: 45%;
+    
+}
